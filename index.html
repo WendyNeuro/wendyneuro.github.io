@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research by Wendy Alfonso Torrens, PhD, on psychosis biomarkers, sensory processing, and inclusive electroencephalography.">
+  <meta name="theme-color" content="#992b15">
+  <title>Wendy Alfonso Torrens, PhD | Neuroscience Research</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fffaf4;
+      --ink: #251c18;
+      --muted: #574940;
+      --rust: #9c3208;
+      --line: #e3b292;
+      --accent-orange: #e99b63;
+      --red-orange: #992b15;
+      --cream: #fff8f1;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.63 var(--sans); }
+    a { color: var(--rust); text-underline-offset: .23em; }
+    a:hover { text-decoration-thickness: .13em; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+    p, h1, h2, h3, ul { margin: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.09; }
+    h2 { font-size: clamp(2.4rem, 5.3vw, 4rem); letter-spacing: -.045em; }
+    h3 { font-size: 1.65rem; letter-spacing: -.025em; }
+    .wrap { width: min(100% - 3rem, 72rem); margin-inline: auto; }
+    .skip { position: absolute; left: 1rem; top: 1rem; z-index: 2; transform: translateY(-200%); padding: .6rem 1rem; background: white; }
+    .skip:focus { transform: none; }
+    .masthead { background: var(--red-orange); color: var(--cream); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: .45rem 2rem; padding-block: 1.1rem; border-bottom: 1px solid var(--accent-orange); }
+    .wordmark { font-family: var(--serif); font-size: 1.2rem; }
+    .wordmark, .nav a { color: inherit; text-decoration: none; }
+    .nav { display: flex; flex-wrap: wrap; gap: .35rem 1.4rem; list-style: none; padding: 0; font-size: .9rem; }
+    .nav a { display: inline-block; padding-block: .27rem; }
+    .nav a:hover, .wordmark:hover { text-decoration: underline; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: 1.9rem; padding-block: clamp(3.5rem, 7vw, 7rem); }
+    h1 { font-size: clamp(3.4rem, 7.1vw, 6.45rem); letter-spacing: -.061em; line-height: .95; }
+    h1 span { display: block; }
+    .degree { font-size: .37em; letter-spacing: -.03em; font-style: italic; white-space: nowrap; }
+    .pronouns { margin-top: .8rem; font-size: .95rem; }
+    .hero-contact { margin-top: .9rem; font-size: .95rem; }
+    .hero-contact ul { display: flex; align-items: center; flex-wrap: wrap; gap: .15rem 1rem; list-style: none; padding: 0; }
+    .hero-contact a { display: inline-block; padding-block: .12rem; color: inherit; }
+    .hero-contact .email { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border: 1px solid currentColor; border-radius: .25rem; }
+    .hero-contact .email:hover { background: #fff8f126; }
+    .email-icon { position: relative; display: block; width: 1.2rem; height: .86rem; overflow: hidden; border: 1.5px solid currentColor; border-radius: 2px; }
+    .email-icon::after { content: ''; position: absolute; top: -.48rem; left: 50%; width: .81rem; height: .81rem; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateX(-50%) rotate(45deg); }
+    .hero-copy { margin-top: 1.1rem; max-width: 32rem; font-size: clamp(1.02rem, 1.6vw, 1.24rem); }
+    .hero-links, .profile-links { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem 1.4rem; margin-top: 1.5rem; }
+    .hero-links a { color: inherit; font-size: .95rem; }
+    .hero-links .primary { display: inline-flex; background: var(--cream); color: var(--ink); border-radius: .22rem; text-decoration: none; padding: .67rem 1.05rem; font-weight: 650; }
+    .hero-links .primary:hover { background: #ffdfc2; }
+    .hero-links .primary:focus-visible { outline-color: var(--cream); }
+    .portrait-panel { position: relative; display: grid; place-items: center; padding: clamp(.85rem, 2.5vw, 1.75rem); border: 1px solid #e99b6366; border-radius: .35rem; background: radial-gradient(ellipse at 65% 38%, #bb482a, #832016 85%); }
+    .trace { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .66; }
+    .portrait { position: relative; display: block; width: min(100%, 23rem); height: auto; aspect-ratio: 1; object-fit: cover; object-position: center 28%; border: 2px solid #fff0db; border-radius: 50%; box-shadow: 0 12px 32px #80300046; }
+    .section { padding-block: clamp(3rem, 6.5vw, 6rem); scroll-margin-top: 1.5rem; }
+    .intro { max-width: 44rem; margin-top: .95rem; color: var(--muted); font-size: 1.1rem; }
+    .research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 1rem; margin-top: 2rem; }
+    .topic { display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; padding: 1.35rem; background: #ffead6; border-top: 2px solid var(--accent-orange); }
+    .topic p { color: var(--muted); }
+    .topic > a { margin-top: auto; font-weight: 600; }
+    .topic-figure { width: 100%; margin: 0; }
+    .topic-figure > a { display: block; border-radius: .25rem; }
+    .topic-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: .25rem; background: white; }
+    .topic-figure figcaption { margin-top: .55rem; color: var(--muted); font-size: .875rem; }
+    .publications { background: #fff0e2; border-block: 1px solid var(--line); }
+    .section-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .75rem 1.5rem; }
+    .pub-list { list-style: none; margin-top: 1.8rem; padding: 0; border-top: 1px solid var(--line); }
+    .pub { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr) auto; align-items: start; gap: .5rem 1.3rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+    .pub time { font-variant-numeric: tabular-nums; color: var(--muted); }
+    .pub h3 { font: 650 1.04rem/1.45 var(--sans); }
+    .pub p { color: var(--muted); margin-top: .2rem; font-size: .925rem; }
+    .pub > a { font-weight: 600; }
+    .news { border-bottom: 1px solid var(--line); }
+    .news .pub { grid-template-columns: 7.5rem minmax(0, 1fr); }
+    .mentorship { border-top: 1px solid var(--line); }
+    .mentorship .pub { grid-template-columns: 11rem minmax(0, 1fr); }
+    .mentorship-dates { color: var(--muted); font-size: .925rem; }
+    .mentorship-gallery { margin-top: 2.5rem; }
+    .gallery-grid { display: grid; grid-template-columns: minmax(0, .66fr) minmax(0, 1fr); gap: 1.25rem; margin-top: 1rem; }
+    .gallery-grid-wide-first { grid-template-columns: minmax(0, 1fr) minmax(0, .5625fr); margin-top: 1.5rem; }
+    .gallery-grid figure { margin: 0; }
+    .gallery-grid a { display: block; border-radius: .35rem; }
+    .gallery-grid img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: .35rem; }
+    .gallery-grid figcaption { margin-top: .55rem; color: var(--muted); font-size: .925rem; }
+    .gallery-grid figcaption h4 { margin: 0 0 .18rem; color: var(--ink); font-size: 1rem; }
+    .more { margin-top: 1.3rem; }
+    .more summary { width: fit-content; cursor: pointer; color: var(--rust); font-weight: 650; }
+    .more .pub-list { margin-top: 1rem; }
+    .about-copy { max-width: 46rem; }
+    .about-copy p { color: var(--muted); margin-top: 1rem; }
+    .personal-note { margin-top: 1.5rem; }
+    .personal-note + p { margin-top: .55rem; }
+    .personal-photo { margin: 1.5rem 0 0; }
+    .personal-photo h4 { margin: 0 0 .55rem; font-size: 1rem; }
+    .personal-photo figcaption p { margin: 0 0 .55rem; font-size: .925rem; }
+    .personal-photo a { display: block; border-radius: .35rem; }
+    .personal-photo img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: .35rem; }
+    .training-recognition { margin-top: 2.5rem; padding-top: 1.8rem; border-top: 1px solid var(--line); }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.8rem 4rem; margin-top: 1.3rem; }
+    .detail-grid h4 { margin: 0; font-size: 1rem; }
+    .training-recognition .credentials + h4 { margin-top: 1.5rem; }
+    .credentials { list-style: none; padding: 0; margin-top: .7rem; }
+    .credentials li { padding: .7rem 0; border-bottom: 1px solid var(--line); }
+    .credentials span { display: block; color: var(--muted); font-size: .925rem; }
+    .service { background: #fff0e2; border-block: 1px solid var(--line); }
+    footer { background: var(--accent-orange); color: var(--ink); padding-block: 1.6rem; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem 1.5rem; }
+    footer a { color: inherit; }
+    @media (max-width: 53rem) {
+      .wrap { width: min(100% - 2rem, 72rem); }
+      .hero { grid-template-columns: minmax(0, 1fr) minmax(0, .72fr); }
+      .research-grid { grid-template-columns: 1fr; }
+      .topic { padding: 1.15rem; }
+      .detail-grid { column-gap: 2rem; }
+    }
+    @media (max-width: 38rem) {
+      .header-inner { align-items: flex-start; flex-direction: column; padding-block: .8rem; }
+      .nav { gap: .2rem 1.15rem; }
+      .detail-grid { grid-template-columns: minmax(0, 1fr); }
+      .hero { grid-template-columns: minmax(0, 1fr) minmax(5.75rem, 37%); gap: 1.15rem .8rem; padding-block: 2.6rem 2rem; }
+      .hero-content { display: contents; }
+      h1 { font-size: clamp(1.65rem, 8.2vw, 3.2rem); }
+      .portrait-panel { grid-column: 2; grid-row: 1; padding: 0; border: 0; background: none; }
+      .portrait { width: 100%; }
+      .trace { display: none; }
+      .hero-contact, .hero-copy, .hero-links { grid-column: 1 / -1; margin-top: 0; }
+      .pub { grid-template-columns: 1fr auto; gap: .15rem 1rem; }
+      .pub time { grid-column: 1 / -1; }
+      .news .pub, .mentorship .pub { grid-template-columns: minmax(0, 1fr); }
+      .gallery-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead" id="top">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top">Neuroscience</a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#mentorship">Mentorship</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#news">News</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap hero">
+      <div class="hero-content">
+        <div>
+          <h1>Wendy Alfonso <span>Torrens <small class="degree">PhD</small></span></h1>
+          <p class="pronouns">she/her</p>
+        </div>
+        <div class="hero-contact">
+          <nav aria-label="Professional profiles">
+            <ul>
+              <li><a href="https://github.com/WendyNeuro">GitHub</a></li>
+              <li><a href="https://scholar.google.com/citations?user=nvheIp4AAAAJ">Google Scholar</a></li>
+              <li><a href="https://orcid.org/0000-0002-4332-545X">ORCID</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Torrens+WA%5BAuthor%5D">PubMed</a></li>
+              <li><a href="https://www.linkedin.com/in/wendy-torrens-701379257">LinkedIn</a></li>
+              <li><a class="email" href="mailto:wendy.torrens@ucsf.edu" aria-label="Email Wendy Alfonso Torrens" title="Email Wendy"><span class="email-icon" aria-hidden="true"></span></a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="hero-copy">I use behavioral measures and electroencephalography (EEG) to study sensory processing in schizophrenia and autism and to develop more inclusive ways to measure brain activity.</p>
+        <div class="hero-links">
+          <a class="primary" href="#research">Explore my research</a>
+          <a href="#publications">View publications</a>
+        </div>
+      </div>
+      <div class="portrait-panel">
+        <canvas class="trace" aria-hidden="true"></canvas>
+        <img class="portrait" src="wendy-torrens-headshot.png" width="480" height="640" alt="Wendy Alfonso Torrens" fetchpriority="high">
+      </div>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="research" class="wrap section" aria-labelledby="research-heading">
+      <h2 id="research-heading">Research</h2>
+      <div class="research-grid">
+        <article class="topic">
+          <h3>Psychosis Biomarkers with Clinical Patients</h3>
+          <p>My postdoctoral research investigates measures that could help characterize psychosis risk in people at clinical high risk.</p>
+          <a href="https://www.mirecc.va.gov/MIRECC/visn21/staff.asp">VA research profile</a>
+        </article>
+        <article class="topic" id="sensory-processing">
+          <h3>Sensory Processing and Non-clinical Models</h3>
+          <p>I study how people with different levels of schizotypy and autistic traits process sights and sounds. My work includes studies of visual discomfort and sensory memory.</p>
+          <figure class="topic-figure">
+            <a href="pattern-glare-sensitivity.png" aria-label="View the Pattern Glare Test figure full size">
+              <img src="pattern-glare-sensitivity.png" width="2246" height="1424" loading="lazy" alt="Pattern Glare Test illustration showing a striped grating, examples of visual illusions, and sensations such as unease and dizziness.">
+            </a>
+            <figcaption>
+              Torrens, W. (2024). <a href="https://doi.org/10.6084/m9.figshare.26852950.v3"><cite>Pattern Glare Sensitivity: Illusions and Sensations</cite></a> [Figure]. Figshare. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+            </figcaption>
+          </figure>
+          <figure class="topic-figure">
+            <a href="auditory-sensory-memory.png" aria-label="View the auditory sensory memory figures full size">
+              <img src="auditory-sensory-memory.png" width="1224" height="1552" loading="lazy" alt="Diagram of the auditory mismatch negativity task, EEG waveforms for high-schizotypy and control groups, and scatterplots of EEG amplitude and latency by schizotypy trait score.">
+            </a>
+            <figcaption>Figures 3–5. The auditory task and EEG responses in schizotypy (<a href="https://doi.org/10.1016/j.schres.2025.12.001">Torrens et al., 2026</a>).</figcaption>
+          </figure>
+          <a href="https://github.com/WendyNeuro/Pattern-Glare-Sensitivity-Distinguishes-Subclinical-Autism-And-Schizotypy">Pattern glare project on GitHub</a>
+        </article>
+        <article class="topic" id="inclusive-eeg">
+          <h3>Inclusive EEG</h3>
+          <p>I evaluated the Universal Electroencephalography Clip, which was designed to reduce hair-texture bias in EEG recordings.</p>
+          <figure class="topic-figure">
+            <a href="eeg-electrode-to-scalp.png" aria-label="View the electrode-to-scalp problem figure full size">
+              <img src="eeg-electrode-to-scalp.png" width="1156" height="638" loading="lazy" alt="Diagram showing how coiled hair can lift a traditional EEG electrode and conductive gel away from the scalp.">
+            </a>
+            <figcaption>Figure 1. The electrode-to-scalp problem (<a href="https://doi.org/10.1016/j.neuroscience.2026.05.041">Torrens et al., 2026</a>).</figcaption>
+          </figure>
+          <figure class="topic-figure">
+            <a href="eeg-universal-clip.png" aria-label="View the Universal Electroencephalography Clip figure full size">
+              <img src="eeg-universal-clip.png" width="934" height="1448" loading="lazy" alt="Three photos show the EEG clip’s electrode holder, the assembled clip, and the part that secures it in the hair.">
+            </a>
+            <figcaption>Figure 2. The Universal Electroencephalography Clip (<a href="https://doi.org/10.1016/j.neuroscience.2026.05.041">Torrens et al., 2026</a>).</figcaption>
+          </figure>
+          <a href="https://github.com/WendyNeuro/Testing-The-Universal-Electroencephalography-Clip-To-Correct-Racial-Bias-In-Electroencephalography">EEG clip project on GitHub</a>
+        </article>
+      </div>
+    </section>
+    <section id="publications" class="section publications" aria-labelledby="publications-heading">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2 id="publications-heading">Selected publications</h2>
+          <a href="https://orcid.org/0000-0002-4332-545X">ORCID profile</a>
+        </div>
+        <ul class="pub-list">
+          <li class="pub">
+            <time datetime="2026">2026</time>
+            <div><h3>The Universal Electroencephalography Clip reduces hair-texture bias in electroencephalography</h3><p>Torrens et al. · <i>Neuroscience</i></p></div>
+            <a href="https://doi.org/10.1016/j.neuroscience.2026.05.041" aria-label="Read the EEG clip paper">Paper</a>
+          </li>
+          <li class="pub">
+            <time datetime="2026">2026</time>
+            <div><h3>Perturbed sensory memory associated with schizotypy symptom load</h3><p>Torrens et al. · <i>Schizophrenia Research</i></p></div>
+            <a href="https://doi.org/10.1016/j.schres.2025.12.001" aria-label="Read the sensory memory paper">Paper</a>
+          </li>
+          <li class="pub">
+            <time datetime="2025">2025</time>
+            <div><h3>Identifying overlapping and distinctive traits of autism and schizophrenia using machine learning classification</h3><p>Pablo et al. · <i>Cognitive Neuropsychiatry</i></p></div>
+            <a href="https://doi.org/10.1080/13546805.2025.2464728" aria-label="Read the machine learning classification paper">Paper</a>
+          </li>
+          <li class="pub">
+            <time datetime="2024">2024</time>
+            <div><h3>Pattern glare sensitivity distinguishes subclinical autism and schizotypy</h3><p>Torrens et al. · <i>Cognitive Neuropsychiatry</i></p></div>
+            <a href="https://doi.org/10.1080/13546805.2024.2335103" aria-label="Read the pattern glare sensitivity paper">Paper</a>
+          </li>
+        </ul>
+        <details class="more">
+          <summary>More publications</summary>
+          <ul class="pub-list">
+            <li class="pub">
+              <time datetime="2026">2026</time>
+              <div><h3>Individual differences in susceptibility to color induced visual discomfort</h3><p>Haigh et al. · <i>Vision Research</i></p></div>
+              <a href="https://doi.org/10.1016/j.visres.2026.108833" aria-label="Read the color-induced visual discomfort paper">Paper</a>
+            </li>
+            <li class="pub">
+              <time datetime="2026">2026</time>
+              <div><h3>No evidence of perturbed early auditory processing in undergraduates with a history of mild traumatic brain injury</h3><p>Pablo et al. · <i>European Journal of Neuroscience</i></p></div>
+              <a href="https://doi.org/10.1111/ejn.70494" aria-label="Read the early auditory processing paper">Paper</a>
+            </li>
+            <li class="pub">
+              <time datetime="2023">2023</time>
+              <div><h3>People with high schizotypy experience more illusions in the pattern glare test</h3><p>Torrens, Pablo, et al. (co-first authors) · <i>European Journal of Neuroscience</i></p></div>
+              <a href="https://doi.org/10.1111/ejn.15886" aria-label="Read the pattern glare illusions paper">Paper</a>
+            </li>
+            <li class="pub">
+              <time datetime="2022">2022</time>
+              <div><h3>An analysis of attachment style and psychopathy traits</h3><p>Torrens, Yescavage, and Wylie · <i>El Rio</i></p></div>
+              <a href="https://ojs.csupueblo.edu/article/view/21770" aria-label="Read the attachment style and psychopathy traits paper">Paper</a>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </section>
+    <section id="news" class="wrap section news" aria-labelledby="news-heading">
+      <h2 id="news-heading">News</h2>
+      <ul class="pub-list">
+        <li class="pub">
+          <time datetime="2025-09-03">Sep 3, 2025</time>
+          <div>
+            <h3><a href="https://zenodo.org/records/17046375">OSF Data Sharing User Story: Reusing Pattern Glare Data to Explore Overlapping Traits in Autism and Schizophrenia</a></h3>
+            <p>Center for Open Science · Zenodo</p>
+          </div>
+        </li>
+        <li class="pub">
+          <time datetime="2025-02-08">Feb 8, 2025</time>
+          <div>
+            <h3><a href="https://www.psypost.org/pattern-glare-test-can-be-used-to-identify-individuals-with-schizotypy-traits/">Pattern glare test can be used to identify individuals with schizotypy traits</a></h3>
+            <p>PsyPost</p>
+          </div>
+        </li>
+        <li class="pub">
+          <time datetime="2025-02-05">Feb 5, 2025</time>
+          <div>
+            <h3><a href="https://www.unr.edu/nevada-today/news/2025/cold-springs-harbor-lab-summer-courses">Graduate students attend career-boosting workshop at Cold Spring Harbor Laboratory</a></h3>
+            <p>Nevada Today · University of Nevada, Reno</p>
+          </div>
+        </li>
+        <li class="pub">
+          <time datetime="2023-05-05">May 5, 2023</time>
+          <div>
+            <h3><a href="https://www.unr.edu/nevada-today/news/2023/institute-for-neuroscience-research-retreat">Institute for Neuroscience hosts successful research retreat</a></h3>
+            <p>Nevada Today · University of Nevada, Reno</p>
+          </div>
+        </li>
+        <li class="pub">
+          <time datetime="2023-03-16">Mar 16, 2023</time>
+          <div>
+            <h3><a href="https://www.unr.edu/nevada-today/news/2023/schizotypy-and-illusions">Researchers work to identify new diagnostic tools for schizophrenia</a></h3>
+            <p>Nevada Today · University of Nevada, Reno</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section id="about" class="wrap section" aria-labelledby="about-heading">
+      <div class="about-copy">
+        <h2 id="about-heading">About</h2>
+        <p>I’m a postdoctoral Advanced Data Science Fellow in Mental Illness Research and Treatment at the San Francisco VA Medical Center and UC San Francisco. I earned my PhD in neuroscience at the University of Nevada, Reno, where I studied sensory processing in the Haigh Lab.</p>
+        <p>I’ve mentored undergraduate researchers and shared neuroscience with students through Brain Awareness events and the Brain Bee.</p>
+        <h3 class="personal-note">A little more about me</h3>
+        <p>I was born in Havana, Cuba, where pieces of my heart remain. I love the ocean, sky cats (i.e., owls), land cats (i.e., cats), and I spend my free time singing, painting, and, of course, doing SCIENCE! Don't be a stranger!</p>
+        <figure class="personal-photo" id="cats-and-susan">
+          <figcaption>
+            <h4>My cats and Susan who identifies as feline</h4>
+            <p>From left to right, the top row shows Tulip, Butter-Scotch, and Salem. The bottom row shows Ashes, Susan, and Petunia.</p>
+          </figcaption>
+          <a href="cats-and-susan.png">
+            <img src="cats-and-susan.png" width="1226" height="692" loading="lazy" alt="A collage of five cats and Susan in her enclosure.">
+          </a>
+        </figure>
+        <figure class="personal-photo" id="art-pieces">
+          <figcaption><h4>Some of my art pieces...</h4></figcaption>
+          <a href="art-pieces.png">
+            <img src="art-pieces.png" width="1666" height="1402" loading="lazy" alt="Four paintings showing flamingos and bubbles, a surreal portrait, abstract flowers, and a star-filled circle over a field.">
+          </a>
+        </figure>
+        <div class="profile-links">
+          <a href="https://github.com/WendyNeuro">GitHub</a>
+          <a href="https://orcid.org/0000-0002-4332-545X">ORCID</a>
+          <a href="https://www.mirecc.va.gov/MIRECC/visn21/staff.asp">VA research profile</a>
+        </div>
+      </div>
+      <section class="training-recognition" aria-labelledby="training-recognition-heading">
+        <h3 id="training-recognition-heading">Training and recognition</h3>
+        <div class="detail-grid">
+          <div>
+            <h4>Education</h4>
+            <ul class="credentials">
+              <li>PhD in Neuroscience <span>University of Nevada, Reno · <time datetime="2026-05">May 2026</time></span><span>Advisor Sarah M. Haigh, PhD</span></li>
+              <li>MS in Neuroscience <span>University of Nevada, Reno · <time datetime="2023-05">May 2023</time></span><span>Advisor Sarah M. Haigh, PhD</span></li>
+              <li>BA in Psychology, minor in Spanish <span>Colorado State University Pueblo · <time datetime="2019-12">December 2019</time></span><span>Advisor Karen Yescavage, PhD</span></li>
+              <li>AA in Psychology <span>Pueblo Community College · <time datetime="2018-05">May 2018</time></span></li>
+            </ul>
+            <h4>Relevant Training</h4>
+            <ul class="credentials">
+              <li>Advanced Data Science Fellowship in Mental Illness Research and Treatment <span>San Francisco VA Medical Center and UC San Francisco</span></li>
+              <li>Autism Spectrum Disorders course <span>Cold Spring Harbor Laboratory · <time datetime="2025-07">July 2025</time></span></li>
+              <li>Mentorship training with Jason Young <span>Western Psychological Association · <time datetime="2025-04">April 2025</time></span></li>
+              <li>Schizophrenia and Related Disorders course <span>Cold Spring Harbor Laboratory · <time datetime="2024-06">June 2024</time></span></li>
+              <li>Project ECHO Navigate <span>Early treatment of first-episode psychosis · <time datetime="2022-09">September 2022</time>–<time datetime="2023-01">January 2023</time></span></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Fellowships, awards, and scholarships</h4>
+            <ul class="credentials">
+              <li>NSF Graduate Research Fellowship <span>2023–2026</span></li>
+              <li>Solso Award for Outstanding Scientific Achievement <span>2023 and 2026</span></li>
+              <li>Julius A. Ballardini Cognitive and Brain Sciences Graduate Student Award <span>2025 and 2026</span></li>
+              <li>Nevada Undergraduate Research Award <span>Mentor · 2025</span></li>
+              <li>Nevada Women’s Fund Scholarship <span>2022–2025</span></li>
+              <li>International Brain Research Organization training support <span>Schizophrenia and Related Disorders course · 2024</span></li>
+              <li>Society of Biological Psychiatry Travel Fellowship Award <span>2023</span></li>
+              <li>Society for Neuroscience Trainee Professional Development Award <span>2023</span></li>
+              <li>NIH Research Supplement to Promote Diversity in Health-Related Research <span>Graduate trainee · 2021–2023</span></li>
+              <li>Raymond Berner Graduate School Scholarship <span>2021</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section id="mentorship" class="wrap section mentorship" aria-labelledby="mentorship-heading">
+      <div class="section-heading">
+        <h2 id="mentorship-heading">Mentorship</h2>
+        <a href="https://neurotree.org/neurotree/tree.php?pid=974061">View my Neurotree</a>
+      </div>
+      <ul class="pub-list">
+        <li class="pub">
+          <span class="mentorship-dates"><time datetime="2025-01">Jan</time>–<time datetime="2025-05">May 2025</time></span>
+          <div>
+            <h3>Cheyenne McCormick</h3>
+            <p>Undergraduate in psychological sciences.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <span class="mentorship-dates"><time datetime="2024-12">Dec 2024</time>–<time datetime="2025-05">May 2025</time></span>
+          <div>
+            <h3>Mia K. Price</h3>
+            <p>Undergraduate in psychological sciences. Mia received a Nevada Undergraduate Research Award under my mentorship and went on to pursue clinical master’s programs.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <span class="mentorship-dates"><time datetime="2024-05">May 2024</time>–<time datetime="2025-05">May 2025</time></span>
+          <div>
+            <h3>Kensal Coudriet</h3>
+            <p>Neuroscience undergraduate at the University of Nevada, Reno and a recipient of NIH-funded ENDURE support. Kensal was admitted to Columbia University’s occupational therapy program.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <span class="mentorship-dates"><time datetime="2023-01">Jan 2023</time>–<time datetime="2025-05">May 2025</time></span>
+          <div>
+            <h3>Michelle Ruiz</h3>
+            <p>Psychology undergraduate at the University of Nevada, Reno with a minor in social research methods and applied statistics. Michelle received NIH-funded ENDURE support and pursued graduate preparation programs.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <span class="mentorship-dates"><time datetime="2022-08">Aug 2022</time>–<time datetime="2024-12">Dec 2024</time></span>
+          <div>
+            <h3>Rasia Yankaway</h3>
+            <p>Psychology undergraduate at the University of Nevada, Reno with a minor in biology. After graduation, Rasia continued volunteering in the lab and pursued clinical hours working with autistic children and in hospice care. She planned to apply to medical school with an interest in psychiatry.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <span class="mentorship-dates"><time datetime="2024-01">Jan</time>–<time datetime="2024-05">May 2024</time></span>
+          <div>
+            <h3>Lindsey S. Bevilacqua</h3>
+            <p>Double majored in psychology and neuroscience at the University of Nevada, Reno and went on to enroll in the university’s Master of Social Work program.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <span class="mentorship-dates"><time datetime="2022-08">Aug 2022</time>–<time datetime="2023-05">May 2023</time></span>
+          <div>
+            <h3>Wesley Chen</h3>
+            <p>Neuroscience undergraduate at the University of Nevada, Reno. Wesley was admitted to the university’s Physician Assistant Studies program at its Lake Tahoe campus.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="intro">You can find some of these names in the <a href="#publications">Publication section</a>!</p>
+      <section id="mentorship-gallery" class="mentorship-gallery" aria-labelledby="mentorship-gallery-heading">
+        <h3 id="mentorship-gallery-heading">Gallery</h3>
+        <div class="gallery-grid">
+          <figure>
+            <a href="mentorship-poster-conference.jpg">
+              <img src="mentorship-poster-conference.jpg" width="1170" height="1341" loading="lazy" alt="Two researchers stand beside a poster on cortical excitability at a conference.">
+            </a>
+            <figcaption>
+              <h4>SOBP 2024, Austin, Texas</h4>
+              <p>Michelle Ruiz (right) and I presenting our work.</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <a href="mentorship-poster-presentation.jpg">
+              <img src="mentorship-poster-presentation.jpg" width="1170" height="880" loading="lazy" alt="Two researchers stand on either side of their poster in a room of research displays.">
+            </a>
+            <figcaption>
+              <h4>Annual Integrative Neuroscience Program Symposium 2024</h4>
+              <p>Rasia (right) and I presented our work.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="gallery-grid gallery-grid-wide-first">
+          <figure>
+            <a href="mentorship-mia-price.jpg">
+              <img src="mentorship-mia-price.jpg" width="1800" height="1350" loading="lazy" alt="Mia Price stands beside her poster on how racial cues influence hair texture classification.">
+            </a>
+            <figcaption>
+              <h4>Mia Price presents her research at Wolf Pack Discoveries 2025</h4>
+            </figcaption>
+          </figure>
+          <figure>
+            <a href="mentorship-kensal-coudriet.jpg">
+              <img src="mentorship-kensal-coudriet.jpg" width="1350" height="1800" loading="lazy" alt="Kensal Coudriet stands beside her poster on visual snow and tinnitus.">
+            </a>
+            <figcaption>
+              <h4>Kensal Coudriet presents her research at Wolf Pack Discoveries 2025</h4>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </section>
+    <section id="service" class="section service" aria-labelledby="service-heading">
+      <div class="wrap">
+        <h2 id="service-heading">Service</h2>
+        <div class="detail-grid">
+          <div>
+            <h3>Academic service</h3>
+            <ul class="credentials">
+              <li>Science mentor, <i>Frontiers for Young Minds</i> <span>2026</span></li>
+              <li>Gradventure graduate coordinator <span>Cognitive Brain Sciences Program · 2026</span></li>
+              <li>Ad hoc journal peer review <span><i>Schizophrenia</i> (2025) and <i>Frontiers in Psychology</i> (2024)</span></li>
+              <li>Psi Chi steering committee member <span>Western Psychological Association · 2023–2025. Helped organize convention events and chaired a graduate student panel in 2024.</span></li>
+              <li>International Multisensory Research Forum volunteer <span>2024</span></li>
+              <li>Integrative Neuroscience Program symposium organizer <span>Helped organize a three-day symposium with talks, posters, and research discussions · 2023</span></li>
+              <li>Psi Chi chapter president and GRE study coordinator <span>Colorado State University Pueblo · 2019</span></li>
+              <li>English-to-Spanish translation for Theater of the Oppressed conference presentations <span>Colorado State University Pueblo · 2019</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Community outreach and volunteering</h3>
+            <ul class="credentials">
+              <li>Brain Awareness outreach <span>Academy of Arts, Careers and Technology and Verdi Elementary School · 2025</span></li>
+              <li>International Women’s Day walk volunteer <span>Helped organize the Nevada Women’s Fund’s Accelerate Equality Walk for Women · 2025</span></li>
+              <li>“The Science in You” presentations <span>Presented on how the brain processes sights and sounds at the Jan Evans Juvenile Justice Center · 2023 and 2024</span></li>
+              <li>Neuroscience outreach at a STEAM showcase <span>Pinecrest Academy of Northern Nevada · 2022</span></li>
+              <li>Homelessness outreach in Pueblo, Colorado <span>Volunteered with the Point-in-Time Count and Hope for the Homeless Project, discussed housing needs with the county commissioner, and helped lead classroom discussions on homelessness · 2019</span></li>
+              <li>Community Action Survey translation <span>Translated a survey about the needs of low-income families into Spanish for Pueblo’s Eastside Action Support Team · 2019</span></li>
+              <li>Raptor Center volunteer <span>Assisted with animal care in Pueblo, Colorado · 2019</span></li>
+              <li>Storm cleanup volunteer <span>Helped clear fallen wood with Pueblo Parks and Recreation · 2017</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-inner">
+      <span>Wendy Alfonso Torrens, PhD</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+  <script>
+    // Decorative EEG-inspired traces, generated without research data.
+    const canvas = document.querySelector('.trace');
+    const context = canvas.getContext('2d');
+
+    function drawTraces() {
+      const { width, height } = canvas.getBoundingClientRect();
+      if (!width || !height) return;
+      const scale = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(width * scale);
+      canvas.height = Math.round(height * scale);
+      context.setTransform(scale, 0, 0, scale, 0, 0);
+
+      const inset = width * .08;
+      const traceWidth = width - inset * 2;
+      const firstRow = height * .19;
+      const rowGap = height * .125;
+      const colors = ['#ffac74', '#ffcb9e', '#ffb884', '#ffdfa9', '#ffb884', '#ffac74'];
+
+      context.lineWidth = 1;
+      context.strokeStyle = '#ffcb9e38';
+      context.beginPath();
+      for (let column = 0; column <= 10; column++) {
+        const x = inset + traceWidth * column / 10;
+        context.moveTo(x, height * .12);
+        context.lineTo(x, height * .88);
+      }
+      for (let row = 0; row < colors.length; row++) {
+        const y = firstRow + row * rowGap;
+        context.moveTo(inset, y);
+        context.lineTo(width - inset, y);
+      }
+      context.stroke();
+
+      colors.forEach((color, row) => {
+        const base = firstRow + row * rowGap;
+        context.beginPath();
+        context.strokeStyle = color;
+        context.lineWidth = 1.35;
+        context.lineJoin = 'round';
+        for (let pixel = 0; pixel <= traceWidth; pixel++) {
+          const t = pixel / traceWidth;
+          const phase = row * 1.7;
+          const center = .50 + row * .035;
+          const burst = Math.exp(-Math.pow((t - center) / .085, 2));
+          const signal = .1 * Math.sin(48 * t + phase) +
+            .055 * Math.sin(153 * t + phase) +
+            .038 * Math.sin(275 * t + phase) +
+            .35 * burst * Math.sin(94 * t - phase);
+          const y = base + signal * rowGap;
+          if (pixel === 0) context.moveTo(inset, y);
+          else context.lineTo(inset + pixel, y);
+        }
+        context.stroke();
+      });
+    }
+
+    if (context) new ResizeObserver(drawTraces).observe(canvas);
+  </script>
+</body>
+</html>
